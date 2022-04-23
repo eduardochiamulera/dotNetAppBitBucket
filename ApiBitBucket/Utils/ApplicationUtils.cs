@@ -7,6 +7,8 @@ namespace ApiBitBucket.Utils
     public class ApplicationUtils
     {
         public const string BASE_URL = "https://api.bitbucket.org/2.0/users/";
+        public const int SIXTY_SECONDS = 60000;
+        public const int FIVE_SECONDS = 5000;
 
         public static string DefaultDirectory()
         {
@@ -35,7 +37,7 @@ namespace ApiBitBucket.Utils
             return path;
         }
 
-        public bool ApplicationIsRunning()
+        public static bool ApplicationIsRunning()
         {
             return System.Diagnostics.Process.GetProcessesByName(Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly().Location)).Count() > 1;
         }
