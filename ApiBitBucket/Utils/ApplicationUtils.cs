@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace ApiBitBucket.Utils
 {
@@ -32,6 +33,11 @@ namespace ApiBitBucket.Utils
             }              
 
             return path;
+        }
+
+        public bool ApplicationIsRunning()
+        {
+            return System.Diagnostics.Process.GetProcessesByName(Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly().Location)).Count() > 1;
         }
     }
 }
