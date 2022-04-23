@@ -14,8 +14,11 @@ namespace bitBucketAPI
         private static ReadFileService readFile;
         static async Task Main(string[] args)
         {
-            if (ApplicationUtils.ApplicationIsRunning())
-                Thread.Sleep(ApplicationUtils.SIXTY_SECONDS);
+            if (ApplicationUtils.ApplicationIsAlreadyRunning())
+            {
+                Console.WriteLine("The application is already running, please wait.");
+                Thread.Sleep(ApplicationUtils.NINETY_SECONDS);
+            }
             
             var path = ApplicationUtils.GetPath();
             readFile = new ReadFileService();
