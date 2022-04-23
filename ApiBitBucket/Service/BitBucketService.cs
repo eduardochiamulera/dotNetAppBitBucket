@@ -27,8 +27,10 @@ namespace ApiBitBucket.Service
                 _client.DefaultRequestHeaders.Accept.Clear();
 
                 var url = ApplicationUtils.BASE_URL + user;
-                var response = await _client.GetAsync(url);
+                Console.WriteLine($"URL: {url}");
 
+                var response = await _client.GetAsync(url).Result.Content.ReadAsStringAsync();
+                
                 Console.WriteLine(response);
                 _log.GenerateLog(url, response.ToString());
                 await Task.Delay(ApplicationUtils.FIVE_SECONDS);
