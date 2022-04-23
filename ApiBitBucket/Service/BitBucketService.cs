@@ -31,7 +31,7 @@ namespace ApiBitBucket.Service
 
                 Console.WriteLine(response);
                 _log.GenerateLog(url, response.ToString());
-                await Task.Delay(5000);
+                await Task.Delay(ApplicationUtils.FIVE_SECONDS);
             }
         }
 
