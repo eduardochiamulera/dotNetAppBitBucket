@@ -27,7 +27,7 @@ namespace ApiBitBucket.Utils
             if(!string.IsNullOrEmpty(path) && path.ToLower() == "exit")
                 Environment.Exit(0);
 
-            if (string.IsNullOrEmpty(path) || !File.Exists(""))
+            if (string.IsNullOrEmpty(path) || !File.Exists(path))
             {
                 Console.WriteLine("File not found");
                 Console.WriteLine("Enter EXIT to terminate");
