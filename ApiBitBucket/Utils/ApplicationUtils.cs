@@ -37,7 +37,7 @@ namespace ApiBitBucket.Utils
             return path;
         }
 
-        public static bool ApplicationIsRunning()
+        public static bool ApplicationIsAlreadyRunning()
         {
             return System.Diagnostics.Process.GetProcessesByName(Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly().Location)).Count() > 1;
         }
